@@ -40,6 +40,7 @@ accounts in each type.
   `Sheet3`                            Dashboard containing two charts
                                       that provide a visual summary of
                                       the workbook's sales information.
+                                      
   -----------------------------------------------------------------------
 
 ## Data fields
