@@ -104,16 +104,3 @@ accounts in each type.
     `CAGR = (Sales_2021 / Sales_2017)^(1/4) - 1`
 
     There are four year-to-year intervals between 2017 and 2021.
-
-6.  Treat the workbook as a hypothetical learning dataset, not as
-    verified real-world customer or sales information.
-
-## Suggested starting points
-
--   Compare total Product 1 sales volume across 2017--2021.
--   Compare sales growth across the four account types.
--   Identify accounts with the highest and lowest 5-year CAGR.
--   Explore whether product-line participation or marketing-programme
-    indicators are associated with sales performance.
--   Use `Table2` to create year-wise charts or pivot tables, and
-    `Sheet3` to view the dashboard.
