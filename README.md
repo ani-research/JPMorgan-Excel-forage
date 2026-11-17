@@ -13,9 +13,6 @@ accounts in each type.
 
 ## Workbook structure
 
-  -----------------------------------------------------------------------
-  Worksheet                           Contents
-  ----------------------------------- -----------------------------------
   `Sheet1`                            Original account-level dataset.
                                       Each account appears once, with
                                       account details, product and
