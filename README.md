@@ -8,7 +8,7 @@ account details, product-line indicators, marketing and promotion
 indicators, annual Product 1 sales volumes from 2017 to 2021, and a
 five-year compound annual growth rate (CAGR).
 
-The workbook contains 60 accounts across four account types, with 15
+The main dataset covers 60 accounts across four account types, with 15
 accounts in each type.
 
 ## Workbook structure
@@ -16,28 +16,30 @@ accounts in each type.
   -----------------------------------------------------------------------
   Worksheet                           Contents
   ----------------------------------- -----------------------------------
-  `Sheet1`                            Main account-level dataset. Each
-                                      row represents one account and
-                                      includes account details, product
-                                      and promotion indicators, annual
-                                      sales volumes (2017--2021), and
-                                      5-year CAGR.
+  `Sheet1`                            Original account-level dataset.
+                                      Each account appears once, with
+                                      account details, product and
+                                      promotion indicators, five annual
+                                      Product 1 sales figures
+                                      (2017--2021), and 5-year CAGR.
 
-  `Table2`                            Reshaped version of the account
-                                      data in long format. Each account
-                                      appears five times---once for each
-                                      year---with the year stored in
-                                      `Attribute` and the corresponding
-                                      sales volume stored in `Value`.
+  `Table2`                            Long-format version of the
+                                      account-level data. Each account
+                                      appears once for each year from
+                                      2017 to 2021. The `Attribute`
+                                      column identifies the year and
+                                      `Value` contains the corresponding
+                                      Product 1 sales volume.
 
-  `Sheet2`                            Pivot-table summary showing sales
-                                      for the Small Business segment in
-                                      2017, broken down by account and
-                                      decision maker. The displayed pivot
-                                      output is filtered to this segment
-                                      and year.
+  `Sheet2`                            Pivot-table summaries of sales for
+                                      the Small Business segment in 2017.
+                                      The summaries break the sales
+                                      figure down by account and by
+                                      decision maker.
 
-  `Sheet3`                            Blank worksheet.
+  `Sheet3`                            Dashboard containing two charts
+                                      that provide a visual summary of
+                                      the workbook's sales information.
   -----------------------------------------------------------------------
 
 ## Data fields
@@ -46,7 +48,7 @@ accounts in each type.
 
 -   `Account Name` -- Account identifier.
 -   `Account Address` -- Account address.
--   `Decision Maker` -- Named contact associated with the account.
+-   `Decision Maker` -- Contact associated with the account.
 -   `Phone Number` -- Contact telephone number.
 -   `Account Type` -- Customer category: Small Business, Medium
     Business, Online Retailer, or Wholesale Distributor.
@@ -54,21 +56,20 @@ accounts in each type.
 ### Product and promotion indicators
 
 -   `Product 1`, `Product 2`, `Product 3` -- Indicate whether the
-    account carries or is associated with each product line
-    (`Yes`/`No`).
+    account is associated with each product line (`Yes`/`No`).
 -   `Social Media`, `Coupons`, `Catalog Inclusion`, `Posters` --
     Indicate whether the account is associated with each listed
     marketing or promotional programme (`Yes`/`No`).
 
 ### Sales and growth
 
--   `2017`--`2021` -- Annual Product 1 sales volume, measured in units.
+-   `2017`--`2021` -- Annual Product 1 sales volume, measured in units,
+    in the original account-level dataset.
 -   `5 YR CAGR` -- Five-year compound annual growth rate for Product 1
     sales volume.
-
-In `Table2`, the annual sales columns are unpivoted into: - `Attribute`
--- The year (2017--2021). - `Value` -- Product 1 sales volume for that
-account and year.
+-   `Attribute` -- Year label (2017--2021) in the long-format dataset.
+-   `Value` -- Product 1 sales volume for the corresponding account and
+    year in the long-format dataset.
 
 ## Data dimensions
 
@@ -76,31 +77,34 @@ account and year.
 -   **Account types:** 4
 -   **Accounts per type:** 15
 -   **Annual sales period:** 2017--2021
--   **Main dataset:** 60 rows
--   **Long-format dataset:** 300 rows (60 accounts × 5 years)
+-   **Main dataset:** 60 account records
+-   **Long-format dataset:** 300 account-year records (60 accounts × 5
+    years)
 
 ## Notes for analysis
 
-1.  Use `Sheet1` when analysing accounts at the account level or
-    comparing annual sales across years.
+1.  Use `Sheet1` for account-level analysis and comparisons across the
+    five annual sales columns.
 
 2.  Use `Table2` for year-wise analysis, time-series visualisations, or
-    workflows that require a long-format dataset.
+    workflows that require long-format data.
 
-3.  `Sheet2` is a pivot-table output rather than a complete summary of
-    all account types and years. Check its filters or
-    refresh/reconfigure the pivot table before using it as an overall
-    sales summary.
+3.  `Sheet2` contains pivot-table summaries for **Small Business in
+    2017**; it should not be interpreted as an overall summary of every
+    account type and year.
 
-4.  The CAGR field is calculated from the 2017 and 2021 sales volumes.
-    If recalculating it outside Excel, use:
+4.  Use `Sheet3` for a visual overview of the sales information. The
+    charts are dashboard elements; consult the underlying data and pivot
+    tables when exact values or additional breakdowns are required.
+
+5.  The CAGR can be recalculated from the 2017 and 2021 sales volumes
+    using:
 
     `CAGR = (Sales_2021 / Sales_2017)^(1/4) - 1`
 
-    The exponent is `1/4` because there are four year-to-year intervals
-    between 2017 and 2021.
+    There are four year-to-year intervals between 2017 and 2021.
 
-5.  Treat the workbook as a hypothetical learning dataset, not as
+6.  Treat the workbook as a hypothetical learning dataset, not as
     verified real-world customer or sales information.
 
 ## Suggested starting points
@@ -110,5 +114,5 @@ account and year.
 -   Identify accounts with the highest and lowest 5-year CAGR.
 -   Explore whether product-line participation or marketing-programme
     indicators are associated with sales performance.
--   Use the long-format `Table2` sheet to build year-wise charts or
-    pivot tables.
+-   Use `Table2` to create year-wise charts or pivot tables, and
+    `Sheet3` to view the dashboard.
